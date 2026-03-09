@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>the forms and input type</title>
+  </head>
+  <body>
+    <h1>Form to apply deepanshu scc exam</h1>
+    <form action="post">
+      <div>
+        <label for="username">Enter your user name </label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="enter yoyr username"
+        />
+      </div>
+      <div>
+        <input type="radio" id="male" name="gender" value="male" />
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female" />
+        <label for="female">Female</label>
+      </div>
+      <button>submit</button>
+      <button type="reset">reset</button>
+
+      <input type="checkbox" id="age " name="age" checked />
+      <label for="age">i am 18+ </label>
+
+      <div>
+        Select your proffession
+        <select name="proffession" id="proffession">
+          <option ="student">student</option>
+          <option selected="teacher">teacher</option>
+          //selected use is default select
+        </select><div>
+          <label for="vol">Select your volume</label>
+          <input type="range" id="vol" name="vol" min="0"
+max="200" value="0"</div>
+      </div>
+    </form>
+  </body>
+</html>

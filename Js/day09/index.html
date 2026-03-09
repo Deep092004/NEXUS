@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Olympics 2028 Countdown</title>
+  <style>
+    body {
+      background: #0e273f;
+      color: #f7df03;
+      font-family: "Poppins", sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+    h1 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+    .timer {
+      font-size: 28px;
+      letter-spacing: 2px;
+    }
+    span {
+      display: inline-block;
+      min-width: 80px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Countdown to Olympics 2028 🏅</h1>
+  <div class="timer">
+    <span id="days"></span> Days 
+    <span id="hours"></span> Hours 
+    <span id="minutes"></span> Minutes 
+    <span id="seconds"></span> Seconds
+  </div>
+
+  <script>
+    const olympicsDate = new Date("2028-07-14T00:00:00").getTime();
+
+    function updateTimer() {
+      const now = new Date().getTime();
+      const gap = olympicsDate - now;
+
+      // Math logic same as you used:
+      const days = Math.floor(gap / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((gap / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((gap / (1000 * 60)) % 60);
+      const seconds = Math.floor((gap / 1000) % 60);
+
+      // Display the values
+      document.getElementById("days").innerText = days;
+      document.getElementById("hours").innerText = hours;
+      document.getElementById("minutes").innerText = minutes;
+      document.getElementById("seconds").innerText = seconds;
+    }
+
+    // Call every second to update live
+    setInterval(updateTimer, 1000);
+    updateTimer(); // Initial call
+  </script>
+
+</body>
+</html>

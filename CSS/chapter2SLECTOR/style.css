@@ -1,0 +1,36 @@
+*{
+background-color: antiquewhite;
+ font-family: 'Courier New', Courier, monospace;    /* universal selector */
+}
+#signup,#login{
+   background-color: lightcoral;      /* id selector,and element selector*/
+}
+
+.dk{
+    background-color: darkred;  /* class selector*/
+    color: wheat;
+}
+
+p a{
+    color: rgb(254, 123, 0); /* decendant se*/
+}
+
+p+h3{ 
+    text-decoration: underline;
+    color: brown; /* adjacent sibling selector*/
+}
+.dk+button{
+    color: white;
+    background-color: darkcyan;
+}
+
+div>input{
+    background-color: lightgreen; /* child selector */
+}
+nav a{
+    color: sandybrown;    /* decedant selector */
+}
+h1:hover{
+
+   background-color: #fd94c6; /* pseudo class selector */
+}

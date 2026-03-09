@@ -1,0 +1,31 @@
+/* Reset margins and padding */
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; */
+#h1, #h2 {
+  text-align: center;
+  color: blue;
+  word-spacing: 10px;
+  text-shadow: 10px 5px 6px rgb(123, 123, 123);
+  font-size: 35px;
+  font-style: oblique;
+}
+
+#div {
+    background-color: antiquewhite;
+    margin-top: 10px;
+     padding-top: 0px;
+    text-align: center;
+  color: red;
+  font-size: 18px;
+  word-spacing: 5px;
+  text-transform: capitalize;
+  
+}
+.class {
+     display: inline;
+    
+     text-align: center;
+}
+
