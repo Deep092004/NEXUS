@@ -1,3 +1,6 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+
 const element1=React.createElement("h1",null,"Hello World from React");
 const element2=React.createElement("h2",null,"Welcome to React");
 
