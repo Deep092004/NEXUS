@@ -60,13 +60,12 @@ app.delete("/admin/:id", (req, res) => {
   // if (Access){ // no need because we are using middleware for authentication
   // delete item from food menu
   const id = parseInt(req.params.id);
-  const index = FoodMenu.findIndex((item) => item.id === id);
+  const index = FoodMenu.findIndex(item => item.id === id);
   if (index !== -1) {
     FoodMenu.splice(index, 1);
-    res.status(400).send("Item not  deleted ");
+    res.send("Item deleted successfully");
   } else {
-    FoodMenu.splice(index, 1);
-    res.status(404).send("Item deleted successfully");
+    res.status(404).send("Item not found");
   }
   // }
   // else {
@@ -82,12 +81,14 @@ app.patch("/admin", (req, res) => {
   // if(Access){  no need because we are using middleware for authentication
   // update item in food menu
   const id = res.body.id;
-  const fooddata = FoodMenu.find((item) => item.id === id);
+  const fooddata = FoodMenu.find(item => item.id === id);
   if (fooddata) {
     if (res.body.name) a;
     fooddata.name = res.body.name;
-    if (res.body.category) fooddata.category = res.body.category;
-    if (res.body.price) fooddata.price = res.body.price;
+    if (res.body.category) 
+      fooddata.category = res.body.category;
+    if (res.body.price) 
+      fooddata.price = res.body.price;
     res.send("Item updated successfully in food menu");
   } else {
     res.send("Item not found in food menu");
