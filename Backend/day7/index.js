@@ -15,15 +15,23 @@ app.get("/book",(req,res)=>{
 res.send(Bookstore);                                          
 
 })
-
+// to get the book by id
 app.get("/book/:id",(req,res)=>{
   const id=parseInt(req.params.id);
   const book=Bookstore.find(info=>info.id===id)  
 res.send(book);
 })
+// to add the book in the bookstore
 app.post("/book",(req,res)=>{
     Bookstore.push(req.body);
     res.send("books saved successfully");
+})
+// to delete the book from the bookstore
+app.delete("/delete/:id",(req,res)=>{
+  const id=parseInt(req.params.id);
+  const book=Bookstore.find(info=>info.id===id)  
+  Bookstore.splice(Bookstore.indexOf(book),1);  // to delete the book from the bookstore
+  res.send(book);
 })
 
 
