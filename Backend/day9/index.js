@@ -99,6 +99,55 @@ app.patch("/admin", (req, res) => {
   //     res.status(403).send("You are not authorized to update item in food menu");
   // }
 });
+
+// user admin se food menu dekhega aur usme se apne pasand ka item add to card karega or delete bhi kar sakta hai card se
+app.post("/user/:id", (req, res) => {
+const userId = parseInt(req.params.id);
+const fooditem=FoodMenu.find(item=>item.id===userId);
+if(fooditem){
+AddToCard.push(fooditem);
+res.status(201).send("Item added successfully in card");
+}
+else{
+res.status(404).send("Item not found");
+}
+
+
+
+
+})
+app.delete("/user/:id",(req,res)=>{
+  const userId=parseInt(req.params.id);
+  const index=AddToCard.findIndex(item=>item.id===userId);
+if(index!==-1){
+  AddToCard.splice(index,1);
+  res.status(200).send("Item deleted successfully from card");
+}
+else{
+  res.status(404).send("Item not found in card");
+}
+})
+app.get("/user",(req,res)=>{
+if (AddToCard.length===0){
+  res.status(404).send("No item in card");
+}
+else{
+  res.send(AddToCard);
+}
+})
+// error handling
+app.get("/dummy",(req,res)=>{
+  try{
+// JSON.parse('{"invalid json": "10"}')
+throw new Error("BROKEN")
+res.send("This is dummy route");
+  }
+catch(err){
+    res.status(400).send("Invalid JSON "+err);
+  } 
+})
+//
+//
 app.listen(3000, () => {
   console.log("I am listen at port number 3000");
 });
