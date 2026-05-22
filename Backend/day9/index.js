@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 app.use(express.json());
+// project online food booking system banani hai jisme admin food menu me item add karega aur user usme se apne pasand ka item add to card karega or delete bhi kar sakta hai card se
 // CRUD: CREATE , READ , UPDATE , DELETE
 // database : array
 const FoodMenu = [
@@ -151,3 +152,6 @@ catch(err){
 app.listen(3000, () => {
   console.log("I am listen at port number 3000");
 });
+
+
+// now project end point is ready we can test it using postman or any other api testing tool
