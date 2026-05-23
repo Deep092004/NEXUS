@@ -73,7 +73,7 @@ app.delete("/admin/:id", (req, res) => {
   // res.status(403).send("You are not authorized to delete item from food menu");
   // }
 });
-app.patch("/admin", (req, res) => {
+app.patch("/admin", (req, res) => {       // update item in food menu
   // add item in food menu
   // authentication karna padega ki kya ye admin hi hai ya nahi
   // dummy code for authentication
@@ -91,7 +91,7 @@ app.patch("/admin", (req, res) => {
       fooddata.category = req.body.category;
     }
     if (req.body.price) {
-      fooddata.price = req.body.price;
+      fooddata.price = req.body.price; 
     }
     res.send("Item updated successfully in food menu");
   } else {
