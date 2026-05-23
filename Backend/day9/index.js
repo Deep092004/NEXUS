@@ -81,18 +81,21 @@ app.patch("/admin", (req, res) => {
   // const Access=token==="abcdf"? 1:0;
   // if(Access){  no need because we are using middleware for authentication
   // update item in food menu
-  const id = res.body.id;
+  const id = req.body.id;
   const fooddata = FoodMenu.find(item => item.id === id);
   if (fooddata) {
-    if (res.body.name) a;
-    fooddata.name = res.body.name;
-    if (res.body.category) 
-      fooddata.category = res.body.category;
-    if (res.body.price) 
-      fooddata.price = res.body.price;
+    if (req.body.name) {
+      fooddata.name = req.body.name;
+    }
+    if (req.body.category) {
+      fooddata.category = req.body.category;
+    }
+    if (req.body.price) {
+      fooddata.price = req.body.price;
+    }
     res.send("Item updated successfully in food menu");
   } else {
-    res.send("Item not found in food menu");
+    res.status(404).send("Item not found in food menu");
   }
 
   // }
