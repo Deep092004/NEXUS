@@ -4,17 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>the forms and input type</title>
+  <link rel="icon" type="image/x-icon" href="https://static.vecteezy.com/system/resources/thumbnails/003/171/355/small/objective-lens-icon-with-six-rainbow-colors-vector.jpg">
   </head>
   <body>
     <h1>Form to apply deepanshu scc exam</h1>
     <form action="post">
       <div>
-        <label for="username">Enter your user name </label>
+     <label for="first-name" id="fname" >enter your first name:</label>
+     <input type="text"
+      id="first-name"
+      name="first-name"
+      placeholder="enter your first name"  /> 
+        
+      </div>
+      <div>
+        <label for="username">Enter your last name :</label>
         <input
           type="text"
           id="username"
           name="username"
-          placeholder="enter yoyr username"
+          placeholder="enter your last name"
         />
       </div>
       <div>
@@ -25,10 +34,10 @@
       </div>
       <button>submit</button>
       <button type="reset">reset</button>
-
+<div>
       <input type="checkbox" id="age " name="age" checked />
       <label for="age">i am 18+ </label>
-
+</div>
       <div>
         Select your proffession
         <select name="proffession" id="proffession">
@@ -38,7 +47,8 @@
         </select><div>
           <label for="vol">Select your volume</label>
           <input type="range" id="vol" name="vol" min="0"
-max="200" value="0"</div>
+max="200" value="0"
+</div>
       </div>
     </form>
   </body>
